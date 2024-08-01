@@ -130,3 +130,4 @@
 /home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /home/omen/Documents/finshark/api/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/omen/Documents/finshark/api/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+/home/omen/Documents/finshark/api/obj/Debug/net8.0/api.sourcelink.json
