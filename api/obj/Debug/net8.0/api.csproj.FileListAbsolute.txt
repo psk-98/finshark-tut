@@ -131,3 +131,12 @@
 /home/omen/Documents/finshark/api/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/omen/Documents/finshark/api/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
 /home/omen/Documents/finshark/api/obj/Debug/net8.0/api.sourcelink.json
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/omen/Documents/finshark/api/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
