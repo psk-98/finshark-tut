@@ -10,6 +10,7 @@ using api.Models;
 using Microsoft.EntityFrameworkCore;
 using api.Interfaces;
 using api.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace api.Controllers;
 
@@ -26,13 +27,14 @@ public class StockController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var stocks = await _stockRepo.GetAllAsync(query);
 
-        var stockDto = stocks.Select(s => s.ToStockDto());
+        var stockDto = stocks.Select(s => s.ToStockDto()).ToList();
 
         return Ok(stockDto);
     }

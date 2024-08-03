@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api.Data;
 
@@ -10,9 +11,11 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240803132321_PortfolioManyToMany")]
+    partial class PortfolioManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -45,13 +48,13 @@ namespace api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6023ad45-ae6b-42c2-8f9e-dbdbf55292d1",
+                            Id = "485c3faa-a5d2-4a31-9289-8df98c3ce4c3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "85a8c3c8-33fb-4050-8dc0-1d91e64f7e97",
+                            Id = "93fd7d1c-5746-4654-ade4-d7ca5d5ad871",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -229,10 +232,6 @@ namespace api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("AppUserId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -248,8 +247,6 @@ namespace api.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
 
                     b.HasIndex("StockId");
 
@@ -356,17 +353,9 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Comment", b =>
                 {
-                    b.HasOne("api.Models.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("api.Models.Stock", "Stock")
                         .WithMany("Comments")
                         .HasForeignKey("StockId");
-
-                    b.Navigation("AppUser");
 
                     b.Navigation("Stock");
                 });
